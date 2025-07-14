@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "norse-bold";
+    src: url("fonts/Norse-Bold.otf");
+}
+
+:root {
+    --left-side-width: 40%;
+    --heading-height: 150px;
+    --header: 3rem;
+    --footer: 3rem;
+    --main: calc(100vh - calc(var(--header) + var(--footer)));
+    --right-side-margins: 50px;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    margin: 0px 0px 0px 0px;
+    background-color: whitesmoke;
+}
+
+.left-side {
+    /* Needed for having the .heading postioning within the .left-side */
+    position: relative;
+    height: 100vh;
+    width: var(--left-side-width);
+    background-size: cover;
+    background-image: url("images/halie-west-25xggax4bSA-unsplash.jpg");
+}
+
+.heading {
+    position: absolute;
+    top: 250px;
+    height: var(--heading-height);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img[src="images/odin-lined.png"] {
+    height: calc(var(--heading-height) - 30%);
+    width: 80px;
+}
+
+.heading>h1 {
+    color: white;
+    font-family: "norse-bold";
+    font-size: 4.5rem;
+}
+
+.left-side>p {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    a {
+        color: white;
+    }
+}
+
+.right-side {
+    height: 100vh;
+    width: calc(100% - var(--left-side-width));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .entry-highlight {
+        position: relative;
+        width: 100vp;
+        box-shadow: 0px 5px 5px lightgrey;
+        background-color: white;
+    }
+
+    p,
+    h4 {
+        margin-left: var(--right-side-margins);
+        margin-right: var(--right-side-margins);
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            max-width: 200px;
+        }
+
+        input {
+            border-color: #E5E7EB;
+            border-style: solid;
+            border-radius: 4px;
+        }
+
+        .row {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: var(--right-side-margins);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            margin-left: var(--right-side-margins);
+        }
+
+        input[type="submit"] {
+            max-width: 170px;
+            height: 35px;
+            border-radius: 4px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: var(--right-side-margins);
+            margin-right: var(--right-side-margins);
+
+            background-color: #596D48;
+            border: 0;
+            color: white;
+        }
+    }
+
+}
